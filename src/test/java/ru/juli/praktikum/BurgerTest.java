@@ -21,8 +21,10 @@ public class BurgerTest {
     @Mock
     Ingredient ingredient;
     Burger burger = new Burger();
-    private Ingredient mockIngredient1;
-    private Ingredient mockIngredient2;
+    @Mock
+    Ingredient ingredient1;
+    @Mock
+    Ingredient ingredient2;
 
     @Before
     public void setUp() {
@@ -54,11 +56,11 @@ public class BurgerTest {
     @Test
     public void moveIngredientTest() {
         burger.setBuns(bun);
-        burger.addIngredient(mockIngredient1); // Индекс 0
-        burger.addIngredient(mockIngredient2); // Индекс 1
+        burger.addIngredient(ingredient1); // Индекс 0
+        burger.addIngredient(ingredient2); // Индекс 1
         burger.moveIngredient(0, 1);
-        Assert.assertEquals(mockIngredient2, burger.ingredients.get(0));
-        Assert.assertEquals(mockIngredient1, burger.ingredients.get(1));
+        Assert.assertEquals(ingredient2, burger.ingredients.get(0));
+        Assert.assertEquals(ingredient1, burger.ingredients.get(1));
     }
 
     @Test
